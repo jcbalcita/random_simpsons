@@ -15,7 +15,7 @@ defmodule EpisodeTest do
     # when
     episode = struct(Episode, plain_map)
 
-    #
+    # then
     assert Map.has_key?(episode, :__struct__)
     assert episode.season == 2
     assert episode.season_episode_number == 24

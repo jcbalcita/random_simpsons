@@ -7,7 +7,7 @@ const episodeRows = Array.from(document.getElementsByClassName('vevent')).filter
 
 let season = 1;
 
-const episodes = {}
+const episode_object = {"episodes": []}
 
 episodeRows.forEach(r => {
   const overall_episode_number = parseInt(r.children[0].innerText);
@@ -28,7 +28,7 @@ episodeRows.forEach(r => {
     original_air_date
   }
 
-  episodes[overall_episode_number] = episodeInfo;
+  episode_object.episodes.push(episodeInfo);
 });
 
-JSON.stringify(episodes);
+JSON.stringify(episode_object);
