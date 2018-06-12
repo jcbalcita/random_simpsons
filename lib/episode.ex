@@ -21,6 +21,6 @@ defmodule RandomSimpsons.Episode do
         false -> "#{n}"
       end
 
-    "S0#{episode.season}-E#{episode_number}: #{episode.title}\nWritten by #{episode.writer}\nOriginally aired #{episode.original_air_date}"
+    "S0#{episode.season}E#{episode_number}: #{episode.title}\nWritten by #{episode.writer}\nOriginally aired #{episode.original_air_date}"
   end
 end
