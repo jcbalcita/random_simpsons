@@ -1,18 +1,7 @@
-defmodule Main do
-  @moduledoc """
-  Documentation for RandomSimpsons.
-  """
+defmodule RandomSimpsons.Main do
+  alias RandomSimpsons.Selector
 
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> RandomSimpsons.hello
-      :world
-
-  """
-  def hello do
-    :world
+  def main(args \\ []) do
+    Selector.get_random_episode()
   end
 end

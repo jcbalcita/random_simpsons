@@ -1,7 +1,7 @@
-defmodule EpisodeTest do
+defmodule RandomSimpsons.EpisodeTest do
   use ExUnit.Case
-  doctest Episode
-
+  doctest RandomSimpsons.Episode
+  alias RandomSimpsons.Episode
 
   test "can instantiate Episode struct with all fields" do
     # given
@@ -25,7 +25,7 @@ defmodule EpisodeTest do
     assert episode.original_air_date == "2018-06-09"
   end
 
-  test "can convert string-keyed map to struct" do
+  test "can convert string-keyed map to Episode struct" do
     # given
     string_keyed_map = %{
       "season" => 9,
