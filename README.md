@@ -8,7 +8,7 @@ Each time you run this app, you'll get a random episode from the golden era of T
 ## Installation
 - Install Elixir ~1.6
 - Clone this repository
-- In your terminal, from the home directory of the project: `mix escripts.build`
+- In your terminal, from the home directory of the project: `mix escript.build`
 
 ## Use
 `./random_simpsons` will give you a random golden era episode to watch.
