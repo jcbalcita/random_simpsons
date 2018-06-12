@@ -9,6 +9,7 @@ defmodule RandomSimpsons.Selector do
   end
 
   defp pop_random_episode({:error, _}), do: {:error, "No more episodes to watch"}
+
   defp pop_random_episode({:ok, episode_list}) do
     length = Enum.count(episode_list)
     random = Enum.random(0..length)
@@ -17,8 +18,9 @@ defmodule RandomSimpsons.Selector do
   end
 
   defp update_json_file({:error, message}), do: IO.puts(message)
+
   defp update_json_file({updated_list, random_episode}) do
-    random_episode |> Episode.to_string |> IO.puts
+    random_episode |> Episode.to_string() |> IO.puts()
 
     content = %{
       "episodes" => updated_list,

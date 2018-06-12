@@ -11,16 +11,18 @@ defmodule RandomSimpsons.JsonDecoder do
   end
 
   defp read_episode_json do
-    filename = case File.stat("episodes.json") do
-      {:ok, _} -> "episodes.json"
-      _ -> "episodes_full.json"
-    end
+    filename =
+      case File.stat("episodes.json") do
+        {:ok, _} -> "episodes.json"
+        _ -> "episodes_full.json"
+      end
 
     with {:ok, body} <- File.read(filename),
-         {:ok, data} <- Poison.decode(body), do: data["episodes"]
+         {:ok, data} <- Poison.decode(body),
+         do: data["episodes"]
   end
 
   defp create_episode_list(list) do
-    list |> Enum.map(&(Episode.from_string_keyed_map(&1)))
+    list |> Enum.map(&Episode.from_string_keyed_map(&1))
   end
 end

@@ -15,10 +15,11 @@ defmodule RandomSimpsons.Episode do
 
   @spec to_string(%Episode{}) :: String.t()
   def to_string(%{season_episode_number: n} = episode) do
-    episode_number = case n < 10 do
-      true -> "0#{n}"
-      false -> "#{n}"
-    end
+    episode_number =
+      case n < 10 do
+        true -> "0#{n}"
+        false -> "#{n}"
+      end
 
     "S0#{episode.season}-E#{episode_number}: #{episode.title}\nWritten by #{episode.writer}\nOriginally aired #{episode.original_air_date}"
   end

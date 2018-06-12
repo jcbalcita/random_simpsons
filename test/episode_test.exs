@@ -46,5 +46,4 @@ defmodule RandomSimpsons.EpisodeTest do
     assert episode.writer == "Kobe Bryant"
     assert episode.original_air_date == "2018-06-11"
   end
-
 end
